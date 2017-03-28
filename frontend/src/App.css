@@ -1,0 +1,149 @@
+.App {
+  text-align: center;
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+body{
+  margin: 0px;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+.clear{
+  clear: both;
+}
+.header{
+  background-color: #337ab7;
+  height: 50px;
+}
+.header ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.header ul img{
+  margin: 10px 10px 10px;
+
+}
+.header > ul:first-child{
+  float:left;
+}
+.header > ul:nth-child(2){
+  float:right;
+  margin: 0px;
+}
+.header > ul:nth-child(2) > li {
+  display: inline-block;*/
+  color: black;
+
+}
+.header ul:nth-child(2) li a{
+  color: #303;
+  display: inline-block;
+  padding: 14px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+.header ul:nth-child(2) li a:hover{
+  background-color: black;
+   color: white;
+}
+.header > ul > li > .active{
+
+  background-color: #2a7189;
+  color: white;
+}
+.content p{
+  color: #303;
+  font-size: 30px;
+  margin: 360px 300px;
+  text-align: center;
+}
+
+
+
+@media screen and (max-width: 620px){
+
+    /* styles */
+    body{
+    /*  background-color: #303;*/
+    }
+    .content p{
+
+     font-size: 20px;
+      margin: 350px 20px;
+      text-align: center;
+
+    }
+}
+@media screen and (max-width: 920px){
+
+    /* styles */
+    body{
+    /*  background-color: #303;*/
+    }
+    .content p{
+
+     font-size: 25px;
+      margin: 350px 30px 350px 30px;
+      text-align: center;
+
+    }
+}
+@media screen and (max-width: 1200px){
+
+    /* styles */
+    body{
+    /*  background-color: #303;*/
+    }
+    .content p{
+
+     font-size: 28px;
+      margin: 360px 50px;
+      text-align: center;
+
+    }
+}
+@media screen and (max-width: 1200px){
+
+    /* styles */
+    body{
+    /*  background-color: #303;*/
+    }
+    .logbox{
+
+      margin: 30px auto;
+
+    }
+}
+@media screen and (max-width: 992px){
+
+    /* styles */
+    body{
+    /*  background-color: #303;*/
+    }
+    .logbox{
+
+      margin: 20px auto 50px;
+
+    }
+}
+@media screen and (max-width: 768px){
+
+    /* styles */
+    body{
+    /*  background-color: #303;*/
+    }
+    .logbox{
+
+      margin: 10px auto;
+
+
+    }
+}
+
+
+
