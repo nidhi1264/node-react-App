@@ -1,0 +1,17 @@
+/ -get
+/registration -get
+
+/registration -post
+/login -post
+/login -get
+/home -get
+/follow -post
+/unfollow -post
+/profile -get
+/twit -get
+/twit -post
+/edit -get
+
+/editprofile -get
+/editprofile -post
+ /logout -post

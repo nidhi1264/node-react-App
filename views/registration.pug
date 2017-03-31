@@ -1,0 +1,66 @@
+extends ./layouts/main.pug
+
+block content
+
+    .inner-bg
+        .row
+          .col-sm-6.col-sm-offset-3.form-box
+            .form-top
+              .form-top-left
+               h3 Register to Twitter-Clone
+              .form-top-right
+                i.fa.fa-key.fa-4x
+            .form-bottom
+              form(action='/registration' method='POST' enctype='multipart/form-data')
+                .form-group
+                  label.sr-only(for='form-username') Username
+                  input.form-control(type='text', name='username', placeholder='Username...', required )
+                  -if(errors)
+                    each error in errors
+                      -if(error.param == 'username')
+                        p= error.msg
+                .form-group
+                  label.sr-only(for='form-Email') Email
+                  input.form-control(type='text', name='email', placeholder='Email...', required)
+                  -if(errors)
+                    each error in errors
+                      -if(error.param == 'email')
+                        p= error.msg
+                .form-group
+                  label.sr-only(for='form-password') Password
+                  input.form-control(type='password', name='password', placeholder='Password...', required)
+                  -if(errors)
+                    each error in errors
+                      -if(error.param == 'password')
+                        p= error.msg
+                .form-group
+
+                  h5 Upload a different photo...
+
+                  img.avatar.img-circle(src='images/default.jpg', alt='avatar' style= 'width:100px ; height:100px ')
+                  input.form-control.file(type='file', name='file')
+                  label.sr-only(for='form-image') image
+                  -if(errors)
+                    each error in errors
+                      -if(error.param == 'image')
+                        p= error.msg
+
+                .form-group
+                  button.btn(type='submit') Sign up !
+                .form-group
+                 label Already Account?
+                 a(href='/') &nbsp &nbsp Sign in Now..??
+
+
+//- {{# if success }}
+//- <section class='success'>
+//- <h2>Successful Validation</h2>
+//- </section>
+//- {{else}}
+//-   {{# if success }}
+//-     <section class='errors'>
+//-       <ul>
+//-         {{# each erros }}
+//-           <li>{{this.msg}}</li>
+//-       </ul>
+
