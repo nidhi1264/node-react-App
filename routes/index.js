@@ -26,6 +26,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
+
 router.post('/registration', upload.single('file'), (req, res, next) => {
 
   const session = req.session;
@@ -79,6 +80,7 @@ router.post('/registration', upload.single('file'), (req, res, next) => {
 });
 router.post('/login', (req, res, next) => {
   const session = req.session;
+
   const email = req.body.userdata.email;
 
   const password = req.body.userdata.password;
@@ -219,14 +221,15 @@ router.post('/follow', (req, res, next) => {
         "userId" : userId
       }
       res.send(object);
+
   });
 });
 
 router.post('/unfollow', (req, res, next) => {
   console.log('unfollow')
    let id = req.body.followerId;
-
  let userId = req.body.data;
+
   const query = DB.builder()
 
     .delete()

@@ -19,6 +19,7 @@ class Home extends Component {
     this.onFieldChange = this.onFieldChange.bind(this);
      this.onfollow = this.onfollow.bind(this);
   }
+
     onHandlePage(){
        if(cookie.load(this.props.params.id)) {
         let userId = this.props.params.id;
@@ -32,6 +33,7 @@ class Home extends Component {
       })
       } else {
       browserHistory.push('/login');
+
       }
     }
 
@@ -144,10 +146,12 @@ class Home extends Component {
                   </div>
                   <div className="profile-userbuttons">
                     <input type="hidden" name="followerId" value={a}/>
+
                     <Button type="submit"  id={a} onClick={ (e) => {
                     this.onfollow(a);
                     e.preventDefault();
                   }} className="btn btn-success btn-sm">Follow</Button>
+
 
                   </div>
               </div>
@@ -177,6 +181,7 @@ class Home extends Component {
               <Col xs={3} md={3}>
                 <Thumbnail src={userimg}  alt="242x200">
                   <h3>{username}</h3>
+
                   <div className="list-group">
                     <Link to={home} className="list-group-item active"> <i className="glyphicon glyphicon-home"></i>Home</Link>
                     <Link to={My_ROUTE} className="list-group-item "><i className="glyphicon glyphicon-user"></i>Profile</Link>
@@ -184,16 +189,8 @@ class Home extends Component {
                     <Link to="" className="list-group-item"><i className="glyphicon glyphicon-ok"></i>Follower<span className="badge">{this.state.data.count}
                       </span></Link>
                   </div>
-
-
                 </Thumbnail>
               </Col>
-
-
-
-
-
-
             <div className="col-md-6">
               <div className="twit">
                  <form action="/twit"  method="get">

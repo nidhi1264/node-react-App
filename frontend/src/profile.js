@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {Link,req,browserHistory} from 'react-router';
 import {FormControl,FormGroup, ControlLabel,Col, Thumbnail,ListGroupItem,ListGroup, Button,image,Panel}from 'react-bootstrap';
 import axios from 'axios';
-
-// import cover from '../public/images/cover.jpg';
 import cookie from 'react-cookie';
 import './profile.css';
 
@@ -13,7 +11,7 @@ class Profile extends Component {
     super(props);
     this.state={
       data:'',
-       tweetText: '',
+      tweetText: '',
       tweeted: false,
     }
     //this.onEdit = this.onEdit.bind(this);
@@ -21,7 +19,9 @@ class Profile extends Component {
     this.onFieldChange = this.onFieldChange.bind(this);
      this.onUnfollow = this.onUnfollow.bind(this);
   }
+
   onHandlePage(){
+
     if(cookie.load(this.props.params.id)) {
       let userId = this.props.params.id;
       axios.get('http://localhost:8000/profile/' + userId)
@@ -58,6 +58,7 @@ class Profile extends Component {
     .then(function (response) {
       self.onHandlePage();
 
+
     })
     .catch(function (error) {
       console.log(error);
@@ -76,7 +77,8 @@ class Profile extends Component {
   let userId = this.props.params.id;
   console.log('------wadsujxz', this.props.params.id)
   axios.post('http://localhost:8000/twit', {
-    data : this.state,
+   data : this.state.tweetText,
+   user_id: userId,
   })
   .then(function (response) {
     location.reload();
@@ -156,6 +158,7 @@ class Profile extends Component {
                     </div>
                     <div className="profile-userbuttons">
                        <input type="hidden" name="followerId" value={a}/>
+
                       <Button type="submit" id={a} onClick={ (e) => {
                     this.onUnfollow(a);
                     e.preventDefault();
@@ -229,6 +232,7 @@ class Profile extends Component {
                 </div>
               </div>
             </div>
+
         </div>
       </div>
     </div>

@@ -2,12 +2,10 @@
   "name": "node-react-app",
   "version": "0.1.0",
   "private": true,
-
   "repository": {
   "type": "git",
   "url": "git://github.com/nidhi1264/node-react-App.git"
   },
-
   "dependencies": {
     "axios": "^0.15.3",
     "multer": "^1.3.0",

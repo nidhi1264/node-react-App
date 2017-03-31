@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const request = require('supertest');
 const app = require('../app');
 // request = request('http://localhost:3000');
@@ -80,6 +81,7 @@ describe('GET /registration', () => {
     });
   });
 });
+
 describe('POST /registration', () => {
   it('user can register', (done) => {
     request(app)
@@ -144,7 +146,6 @@ describe(`GET /profile/${user.userdata.id}`, () => {
     });
   });
 });
-
 describe('GET /twit', () => {
   it('should return a edit profile page', (done) => {
     request(app)
@@ -216,6 +217,7 @@ describe('GET /logout', () => {
       });
   });
 });
+
 
 describe(`editprofile/${user.userdata.id}`, () => {
   describe('GET /edit', () => {

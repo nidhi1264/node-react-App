@@ -55,6 +55,7 @@ class Editprofile extends Component {
       browserHistory.push('/home/'+ userId)
     } else {
         browserHistory.push('/editprofile' + userId)
+
     }
   })
   .catch(function (error) {
@@ -76,6 +77,7 @@ class Editprofile extends Component {
       userimg = `http://localhost:8000/images/${this.state.data.users[0].image}`
 
     }
+
 
     console.log('from component...profieedit:', this.state);
     const home = (id) => `/home/${this.props.params.id}`;
@@ -120,6 +122,7 @@ class Editprofile extends Component {
                             <br />
                             <Button type='submit' className='btn btn-primary btn-sm' onClick={this.handleSubmit}>Submit</Button>
 
+
                         </form>
                     </div>
             </div>
@@ -134,6 +137,7 @@ class Editprofile extends Component {
                         </div>
                         <div className='col-lg-7 col-md-5'>
                             <button className='btn btn-primary'><i className='fa fa-upload' aria-hidden='true'></i> Upload a new profile photo!</button>
+
                         </div>
                     </div>
                 </div>
